@@ -831,6 +831,23 @@
 	reg = <0 0x97615000 0 0x2000>;
 };
 
+&firmware {
+	android {
+		compatible = "android,firmware";
+		vbmeta {
+			compatible = "android,vbmeta";
+			parts = "vbmeta,boot,system,vendor,dtbo,recovery";
+		};
+
+		fstab {
+			compatible = "android,fstab";
+			system {
+				status = "disabled";
+			};
+		};
+	};
+};
+
 /* sdm670.dtsi */
 &clock_cpucc {
 	qcom,cpufreq-table-0 =
